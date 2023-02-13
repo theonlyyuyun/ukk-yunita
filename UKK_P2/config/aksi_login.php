@@ -7,9 +7,9 @@ $password = md5($_POST['password']);
 $level = $_POST['level'];
 
 if ($level == 'masyarakat') {
-    $login = mysqli_query($koneksi, "$SELEC * FROM masyarakat WHERE username='$username' AND password='$password'");
+    $login = mysqli_query($koneksi, "SELECT * FROM masyarakat WHERE username='$username' AND password='$password'");
 } else {
-    $login = mysqli_query($koneksi, "$SELEC * FROM petugas WHERE username='$username' AND password='$password'");
+    $login = mysqli_query($koneksi, "SELECT * FROM petugas WHERE username='$username' AND password='$password'");
 }
 $cek = mysqli_num_rows($login);
 if ($cek > 0) {
